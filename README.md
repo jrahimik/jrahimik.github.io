@@ -1,2 +1,2 @@
-# sshan-zhao.github.io
-(c) Shanshan Zhao, 2018
+# jrahimik.github.io
+(c) Javad Rahimikollu, 2018
