@@ -1,0 +1,229 @@
+/* 
+ * responsive.css
+ * Additional responsive styles for Javad Rahimikollu's GitHub.io page
+ */
+
+/* ===== RESPONSIVE ENHANCEMENTS ===== */
+
+/* Extra small devices (phones, 576px and down) */
+@media (max-width: 576px) {
+    /* Typography adjustments */
+    h1 {
+        font-size: 2.25rem;
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+    }
+    
+    /* Layout adjustments */
+    .section {
+        padding: var(--space-lg) 0;
+    }
+    
+    /* Project cards */
+    .project-card {
+        min-height: auto;
+    }
+    
+    /* Publication items */
+    .publication-badge {
+        position: static;
+        display: inline-block;
+        margin-bottom: var(--space-xs);
+    }
+    
+    .publication-title {
+        padding-right: 0;
+    }
+    
+    /* Contact form */
+    .form-group input,
+    .form-group textarea {
+        padding: 0.5rem;
+    }
+    
+    /* Timeline */
+    .timeline::before {
+        left: 8px;
+    }
+    
+    .timeline-item {
+        padding-left: 30px;
+    }
+    
+    .timeline-marker {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Small devices (landscape phones, 576px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    /* Typography adjustments */
+    h1 {
+        font-size: 2.75rem;
+    }
+    
+    /* Timeline */
+    .timeline::before {
+        left: 15px;
+    }
+    
+    .timeline-item {
+        padding-left: 45px;
+    }
+    
+    .timeline-marker {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Medium devices (tablets, 768px to 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+    /* Projects grid */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Skills container */
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 993px) {
+    /* Enhanced animations for desktop */
+    .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px -15px rgba(2, 12, 27, 0.7);
+    }
+    
+    .publication-item:hover {
+        transform: translateY(-8px);
+    }
+    
+    /* Skill bars animation */
+    @keyframes skillProgress {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+    
+    .skill-progress {
+        animation: skillProgress 1.5s ease-out forwards;
+    }
+    
+    /* Timeline hover effects */
+    .timeline-item:hover .timeline-marker {
+        transform: scale(1.2);
+        border-width: 3px;
+    }
+    
+    .timeline-marker {
+        transition: transform 0.3s ease, border-width 0.3s ease;
+    }
+}
+
+/* Print styles for resume printing */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    #navbar, footer, .cta-buttons, .contact-form {
+        display: none;
+    }
+    
+    .section {
+        padding: 1rem 0;
+        page-break-inside: avoid;
+    }
+    
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+    
+    .skill-bar {
+        border: 1px solid #ccc;
+    }
+    
+    .skill-progress {
+        background-color: #888;
+    }
+    
+    .timeline::before {
+        background-color: #888;
+    }
+    
+    .timeline-marker {
+        border-color: #888;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    .nav-link::after {
+        height: 3px; /* Thicker tap target */
+    }
+    
+    .btn {
+        padding: 0.85rem 1.75rem; /* Larger tap target */
+    }
+    
+    .social-links a {
+        padding: 0.5rem; /* Larger tap target */
+    }
+}
+
+/* High-resolution displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    body {
+        font-weight: 300; /* Slightly lighter font weight for retina displays */
+    }
+    
+    .section-title::after {
+        height: 3px; /* Slightly thinner line for retina displays */
+    }
+}
+
+/* Dark mode preference */
+@media (prefers-color-scheme: dark) {
+    /* Already dark themed, but could adjust for even darker preference */
+    :root {
+        --bg-color: #05101e;
+        --bg-light: #0a1930;
+    }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    .project-card:hover,
+    .publication-item:hover,
+    .timeline-item:hover .timeline-marker {
+        transform: none;
+    }
+    
+    .skill-progress {
+        animation: none;
+    }
+    
+    * {
+        transition-duration: 0.001ms !important;
+    }
+}
