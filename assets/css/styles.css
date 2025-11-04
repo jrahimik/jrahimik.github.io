@@ -740,3 +740,72 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===== RESEARCH INTERESTS SECTION ===== */
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-lg);
+}
+
+.interest-card {
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    padding: var(--space-lg);
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    transition: var(--transition);
+}
+
+.interest-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.interest-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-md);
+    color: var(--secondary-color);
+}
+
+.interest-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ===== AWARDS SECTION ===== */
+.awards-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.award-item {
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    padding: var(--space-lg);
+    border-left: 4px solid var(--secondary-color);
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    transition: var(--transition);
+}
+
+.award-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.award-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: var(--space-sm);
+    color: var(--white);
+}
+
+.award-institution {
+    color: var(--secondary-color);
+    margin-bottom: var(--space-xs);
+    font-weight: 500;
+}
+
+.award-date {
+    color: var(--text-secondary);
+    font-style: italic;
+}
